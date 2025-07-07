@@ -8,7 +8,7 @@ Docker est un outil permettant de créer, déployer et exécuter des application
 
 ##  Étapes de base pour utiliser Docker
 
-### 1. 🔧 Installation de Docker
+### 1. Installation de Docker
 
 - Aller sur [https://www.docker.com/products/docker-desktop](https://www.docker.com/products/docker-desktop)
 - Télécharger Docker Desktop (Windows, Mac) ou utiliser `apt`, `yum` pour Linux.
@@ -119,15 +119,6 @@ docker exec -it <id> bash  # Accès au terminal du conteneur
 
 ---
 
-##  Résumé
-
-| Étape               | Commande clé                        |
-|--------------------|-------------------------------------|
-| Lancer un test     | `docker run hello-world`           |
-| Télécharger image  | `docker pull <nom>`                |
-| Lancer conteneur   | `docker run -d -p ...`             |
-| Arrêter conteneur  | `docker stop <id>`                 |
-| Construire image   | `docker build -t nom .`            |
 
 ---
 
