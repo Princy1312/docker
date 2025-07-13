@@ -119,6 +119,48 @@ docker exec -it <id> bash  # Accès au terminal du conteneur
 
 ---
 
+```bash
+# 📋 Lister les images
+docker images
+# ou
+docker image ls
 
+# 📥 Télécharger une image
+docker pull <nom_image>
+# Exemple :
+docker pull nginx
+
+# 🛠️ Construire une image à partir d’un Dockerfile
+docker build -t nom_image:tag .
+# Exemple :
+docker build -t mon-app:v1 .
+
+# 🔍 Inspecter une image
+docker image inspect <nom_image_ou_id>
+
+# 🏷️ Taguer une image
+docker tag <image_id> <nouveau_nom>:<tag>
+# Exemple :
+docker tag mon-app:v1 monregistry/mon-app:v1
+
+# 🚀 Lancer un conteneur depuis une image
+docker run -d -p 8080:80 mon-app:v1
+
+# 📤 Pousser une image sur Docker Hub
+docker login
+docker push <utilisateur>/<nom_image>:<tag>
+
+# ❌ Supprimer une image
+docker rmi <nom_image_ou_id>
+# Exemple :
+docker rmi nginx
+
+# 🧹 Nettoyer les images inutilisées
+docker image prune        # Supprimer les images "dangling"
+docker image prune -a     # Supprimer toutes les images non utilisées
+
+# 🕵️‍♂️ Historique des couches d’une image
+docker history <nom_image>
+```
 
 
