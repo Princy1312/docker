@@ -116,3 +116,75 @@ docker images         # Liste des images
 docker logs <id>      # Voir les logs
 docker exec -it <id> bash  # Accès au terminal du conteneur
 ```
+# 🐳 Docker - Commandes essentielles
+
+Ce fichier contient les commandes Docker pour les éléments suivants : **image**, **container**, **Dockerfile**, **compose**, **volume**, **network**.
+
+```bash
+# ----------------------------
+# 📦 Docker Image
+# ----------------------------
+docker images                     # Lister les images
+docker pull <image>              # Télécharger une image
+docker build -t nom:tag .        # Construire une image avec un Dockerfile
+docker tag <id> nouveau:tag      # Taguer une image
+docker image inspect <image>     # Inspecter une image
+docker history <image>           # Voir les couches d'une image
+docker rmi <image>               # Supprimer une image
+docker image prune               # Supprimer les images non utilisées
+docker image prune -a            # Supprimer toutes les images inutilisées
+
+# ----------------------------
+# 🧱 Docker Container
+# ----------------------------
+docker run -d -p 80:80 nginx     # Lancer un conteneur
+docker ps                        # Lister les conteneurs actifs
+docker ps -a                     # Lister tous les conteneurs
+docker stop <id>                 # Arrêter un conteneur
+docker rm <id>                   # Supprimer un conteneur
+docker restart <id>              # Redémarrer un conteneur
+docker logs <id>                 # Voir les logs
+docker exec -it <id> bash        # Accéder à un conteneur
+
+# ----------------------------
+# 📝 Dockerfile
+# ----------------------------
+# Exemple de Dockerfile :
+FROM node:18
+WORKDIR /app
+COPY . .
+RUN npm install
+CMD ["npm", "start"]
+
+# ----------------------------
+# 📦 Docker Compose
+# ----------------------------
+# Exemple docker-compose.yml :
+version: "3"
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+
+# Commandes :
+docker-compose up                # Lancer tous les services
+docker-compose down              # Stopper et supprimer les services
+docker-compose up --build        # Rebuild + lancer
+
+# ----------------------------
+# 💾 Docker Volume
+# ----------------------------
+docker volume create mon_volume  # Créer un volume
+docker volume ls                 # Lister les volumes
+docker run -v mon_volume:/data nginx  # Utiliser un volume
+docker volume rm mon_volume      # Supprimer un volume
+
+# ----------------------------
+# 🌐 Docker Network
+# ----------------------------
+docker network create mon_net    # Créer un réseau
+docker network ls                # Lister les réseaux
+docker run --network mon_net nginx  # Lancer dans un réseau
+docker network rm mon_net        # Supprimer un réseau
+```
