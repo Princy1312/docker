@@ -29,11 +29,11 @@ Ce test permet de vérifier si Docker est bien installé.
 
 ---
 
-##Docker-commande essentielle 
+## Docker-commande essentielle 
 
 ---
 
-##  Image Docker
+##  Docker image 
 
 ### Lister les images
 ```bash
