@@ -42,37 +42,37 @@ docker images
 docker image ls
 ```
 
-### Télécharger une image
+ Télécharger une image
 ```bash
 docker pull <image>
 ```
 
-### Construire une image avec un Dockerfile
+Construire une image avec un Dockerfile
 ```bash
 docker build -t nom:tag .
 ```
 
-### Taguer une image
+ Taguer une image
 ```bash
 docker tag <id_image> nouveau_nom:tag
 ```
 
-### Inspecter une image
+Inspecter une image
 ```bash
 docker image inspect <image>
 ```
 
-### Voir les couches d'une image
+ Voir les couches d'une image
 ```bash
 docker history <image>
 ```
 
-### Supprimer une image
+ Supprimer une image
 ```bash
 docker rmi <image>
 ```
 
-### Nettoyer les images non utilisées
+ Nettoyer les images non utilisées
 ```bash
 docker image prune
 docker image prune -a
@@ -80,49 +80,48 @@ docker image prune -a
 
 ---
 
-##  Docker Container
+#  Docker Container
 
-### Lancer un conteneur nginx
+ Lancer un conteneur nginx
 ```bash
 docker run -d -p 80:80 nginx
 ```
 
-### Lister les conteneurs en cours d'exécution
+ Lister les conteneurs en cours d'exécution
 ```bash
 docker ps
 ```
 
-### Lister tous les conteneurs (même arrêtés)
+Lister tous les conteneurs (même arrêtés)
 ```bash
 docker ps -a
 ```
 
-### Lancer un conteneur interactif basé sur Ubuntu
+ Lancer un conteneur interactif basé sur Ubuntu
 ```bash
 docker run -it ubuntu bash
 ```
 
-### Lancer un conteneur nommé nginx en arrière-plan
+ Lancer un conteneur nommé nginx en arrière-plan
 ```bash
 docker run -d --name mon_nginx nginx
 ```
 
-### Arrêter le conteneur `mon_nginx`
+ Arrêter le conteneur `mon_nginx`
 ```bash
 docker stop mon_nginx
 ```
 
-### Redémarrer le conteneur `mon_nginx`
+ Redémarrer le conteneur `mon_nginx`
 ```bash
 docker restart mon_nginx
 ```
 
-### Voir les logs d’un conteneur
+ Voir les logs d’un conteneur
 ```bash
 docker logs mon_nginx
 ```
-
-### Accéder à un conteneur en ligne de commande
+ Accéder à un conteneur en ligne de commande
 ```bash
 docker exec -it mon_nginx bash
 ```
@@ -131,7 +130,7 @@ docker exec -it mon_nginx bash
 
 ##  Dockerfile
 
-### Exemple de fichier Dockerfile
+ Exemple de fichier Dockerfile
 ```Dockerfile
 FROM node:18
 WORKDIR /app
@@ -144,7 +143,7 @@ CMD ["npm", "start"]
 
 ##  Docker Compose
 
-### Exemple de docker-compose.yml
+ Exemple de docker-compose.yml
 ```yaml
 version: "3"
 services:
@@ -154,17 +153,17 @@ services:
       - "3000:3000"
 ```
 
-### Lancer les services
+ Lancer les services
 ```bash
 docker-compose up
 ```
 
-### Lancer avec reconstruction
+ Lancer avec reconstruction
 ```bash
 docker-compose up --build
 ```
 
-### Stopper et supprimer les services
+ Stopper et supprimer les services
 ```bash
 docker-compose down
 ```
@@ -173,22 +172,22 @@ docker-compose down
 
 ##  Docker Volume
 
-### Créer un volume
+ Créer un volume
 ```bash
 docker volume create mon_volume
 ```
 
-### Lister les volumes
+ Lister les volumes
 ```bash
 docker volume ls
 ```
 
-### Utiliser un volume dans un conteneur
+Utiliser un volume dans un conteneur
 ```bash
 docker run -v mon_volume:/data nginx
 ```
 
-### Supprimer un volume
+ Supprimer un volume
 ```bash
 docker volume rm mon_volume
 ```
@@ -196,23 +195,22 @@ docker volume rm mon_volume
 ---
 
 ##  Docker Network
-
-### Créer un réseau
+ Créer un réseau
 ```bash
 docker network create mon_net
 ```
 
-### Lister les réseaux
+ Lister les réseaux
 ```bash
 docker network ls
 ```
 
-### Utiliser un réseau lors du run
+ Utiliser un réseau lors du run
 ```bash
 docker run --network mon_net nginx
 ```
 
-### Supprimer un réseau
+Supprimer un réseau
 ```bash
 docker network rm mon_net
 ```
