@@ -30,11 +30,7 @@ Ce test permet de vérifier si Docker est bien installé.
 
 ```
 
----
-
-#  Docker - Commandes essentielles
-
-Ce fichier contient les commandes Docker pour les éléments suivants : **image**, **container**, **Dockerfile**, **compose**, **volume**, **network**.
+#Docker-commande essentielle 
 
 ---
 
