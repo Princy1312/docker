@@ -28,7 +28,6 @@ docker run hello-world
 Ce test permet de vérifier si Docker est bien installé.
 
 
-```
 
 #Docker-commande essentielle 
 
