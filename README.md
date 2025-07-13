@@ -35,7 +35,7 @@ Ce test permet de vérifier si Docker est bien installé.
 
 ##  Docker image 
 
-### Lister les images
+ Lister les images
 ```bash
 docker images
 # ou
